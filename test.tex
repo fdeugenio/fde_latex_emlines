@@ -1,0 +1,48 @@
+\documentclass[11pt,a4paper,english]{article} % document type and language
+\usepackage[legalpaper,margin=1cm]{geometry}
+
+\input{emlines}
+
+\begin{document}
+{\Large \texttt{emlines}: \textbf{description and example usage}
+Maintainer: fdeugenio@gmail.com
+
+Lines use the commands \verb|\permittedEL|, \verb|\semiforbiddenEL|,
+and \verb|\forbiddenEL|. The differ only in which parentheses are present.
+These commands have six optional parameters, as follows:
+\begin{enumerate}
+  \item Chemical species, e.g. `O'
+  \item Ionization status, e.g. `IV'. This is automatically rendered in small capitals, using \verb|\textsc|, e.g. `IV' becomes \textsc{iv}
+  \item Wavelength indicator, typically just \verb|\textlambda|
+  \item Second, optional wavelength indicator; empty for singlets, or \verb|\textlambda| for doublets and multiplets.
+  \item Wavelength value, for instance 4959, or \verb|4959\AA|, or \verb|4959\AA,| for doublets, or 
+  \verb|4959\AA--| for multiplets.
+  \item Second, optional wavelength value, for instance 5007, or \verb|5007\AA|
+\end{enumerate}
+
+Since these commands are cumbersome, there are several shortcuts for common emission lines. Below are a few examples, with the command implementation too.
+\begin{itemize}
+  \item \verb|\HI| \hfill \HI
+  \item \verb|\Lyalpha| \hfill \Lyalpha
+  \item \verb|\Hgamma| \hfill \Hgamma
+  \item \verb|\HII| \hfill \HII
+  \item \verb|\HII| \hfill \HII
+  \item \verb|\HeII| \hfill \HeII
+  \item \verb|\HeIIL| \hfill \HeIIL
+  \item \verb|\HeIIL[4686]| \hfill \HeIIL[4686]
+  \item \verb|\OIII| \hfill \OIII
+  \item \verb|\OIIIL| \hfill        \OIIIL\\
+      \verb|\newcommandx{\OIIIL}[1][1=5007]{\forbiddenEL[O][iii][\textlambda][#1]}|
+  \item \verb|\OIIIL[4363]| \hfill  \OIIIL[4363]
+  \item \verb|\OIIIall| \hfill      \OIIIall
+  \item \verb|\semiOIII| \hfill     \semiOIII
+  \item \verb|\semiOIIIall| \hfill  \semiOIIIall
+  \item \verb|\OIIAuall| \hfill     \OIIAuall\\
+      \verb|\newcommand{\OIIAuall}{\forbiddenEL[O][ii][\textlambda][\textlambda][7319--][7331]}|
+  \item \verb|\CIIFIRL| \hfill      \CIIFIRL\\
+      \verb|\newcommandx{\CIIFIRL}{\forbiddenEL[C][ii][\textlambda][158\,\mum]}|
+\end{itemize}
+
+
+
+\end{document}

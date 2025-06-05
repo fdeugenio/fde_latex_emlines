@@ -1,0 +1,112 @@
+% Author: fdeugenio@gmail.com
+% Address: https://github.com/fdeugenio/fde_latex_emlines
+
+%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%% %%%%%%%
+%%%%%%%%% LINE SYMBOLS %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%% %%%%%%%
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{textgreek}
+\usepackage{xargs}
+\usepackage{xspace}
+
+% Enables Angstrom symbol and um symbol in math mode.
+\let\oldAA\AA
+\renewcommand{\AA}{\text{\oldAA}\xspace}
+\newcommand{\mum}{\text{\textmu m}\xspace}
+
+% Recombination lines
+\newcommand{\Lyalpha}{\text{Ly\,\textalpha}\xspace}
+\newcommand{\Halpha}{\text{H\,\textalpha}\xspace}
+\newcommand{\Hbeta}{\text{H\,\textbeta}\xspace}
+\newcommand{\Hgamma}{\text{H\,\textgamma}\xspace}
+\newcommand{\Hdelta}{\text{H\,\textdelta}\xspace}
+\newcommand{\Paalpha}{\text{Pa\,\textalpha}\xspace}
+\newcommand{\Pabeta}{\text{Pa\,\textbeta}\xspace}
+\newcommand{\Hepsilon}{\text{H\,\textepsilon}\xspace}
+
+% Collisionally excited lines.
+\newcommandx{\permittedEL}[6][1=O,2=III,3=,4=,5=,6=]{\text{{#1}\,{\sc {#2}}{#3}{#4}{#5}{#6}}\xspace}
+\newcommandx{\semiforbiddenEL}[6][1=O,2=III,3=,4=,5=,6=]{\text{{#1}\,{\sc{#2}}]{#3}{#4}{#5}{#6}}\xspace}
+\newcommandx{\forbiddenEL}[6][1=O,2=III,3=,4=,5=,6=]{\text{[{#1}\,{\sc{#2}}]{#3}{#4}{#5}{#6}}\xspace}
+
+\newcommand{\HI}{\permittedEL[H][i]}
+\newcommand{\HII}{\permittedEL[H][ii]}
+
+\newcommand{\NV}{\permittedEL[N][v]}
+\newcommandx{\NVL}[1][1=1243]{\permittedEL[N][v][\textlambda][#1]}
+\newcommandx{\NVall}{\permittedEL[N][v][\textlambda][\textlambda][1239,][1243]}
+
+\newcommandx{\CIIall}{\semiforbiddenEL[C][ii][\textlambda][\textlambda][2324--][2329]}
+
+\newcommand{\NIV}{\semiforbiddenEL[N][iv]}
+\newcommandx{\NIVL}[1][1=1486]{\semiforbiddenEL[N][iv][\textlambda][#1]}
+
+\newcommand{\CIV}{\permittedEL[C][iv]}
+\newcommandx{\CIVL}[1][1=1550]{\permittedEL[C][iv][\textlambda][#1]}
+\newcommand{\CIVall}{\permittedEL[C][iv][\textlambda][\textlambda][1548,][1551]}
+
+\newcommand{\HeII}{\permittedEL[He][ii]}
+\newcommandx{\HeIIL}[1][1=1640]{\permittedEL[He][ii][\textlambda][#1]}
+
+\newcommand{\semiOIII}{\semiforbiddenEL[O][iii]}
+\newcommandx{\semiOIIIL}[1][1=1666]{\semiforbiddenEL[O][iii][\textlambda][#1]}
+\newcommand{\semiOIIIall}{\semiforbiddenEL[O][iii][\textlambda][\textlambda][1661,][1666]}
+
+\newcommand{\NIII}{\semiforbiddenEL[N][iii]}
+\newcommandx{\NIIIL}[1][1=1750]{\semiforbiddenEL[N][iii][\textlambda][#1]}
+\newcommand{\NIIIall}{\semiforbiddenEL[N][iii][\textlambda][\textlambda][1747--][1754]}
+
+\newcommandx{\CIII}{\semiforbiddenEL[C][iii]}
+\newcommandx{\CIIIL}[1][1=1909]{\semiforbiddenEL[C][iii][\textlambda][#1]}
+\newcommand{\CIIIall}{\semiforbiddenEL[C][iii][\textlambda][\textlambda][1907,][1909]}
+
+\newcommand{\NeIV}{\forbiddenEL[Ne][iv]}
+\newcommandx{\NeIVL}[1][1=2424]{\forbiddenEL[Ne][iv][\textlambda][#1]}
+\newcommand{\NeIVall}{\forbiddenEL[Ne][iv][\textlambda][\textlambda][2422,][2424]}
+
+\newcommand{\MgII}{\permittedEL[Mg][ii]}
+\newcommandx{\MgIIL}[1][1=2803]{\permittedEL[Mg][ii][\textlambda][#1]}
+\newcommand{\MgIIall}{\permittedEL[Mg][ii][\textlambda][\textlambda][2796,][2803]}
+
+\newcommand{\NeV}{\forbiddenEL[Ne][v]}
+\newcommandx{\NeVL}[1][1=3426]{\forbiddenEL[Ne][v][\textlambda][#1]}
+\newcommand{\NeVall}{\forbiddenEL[Ne][v][\textlambda][\textlambda][3346,][3426]}
+
+
+\newcommand{\OII}{\forbiddenEL[O][ii]}
+\newcommandx{\OIIL}[1][1=3726]{\forbiddenEL[O][ii][\textlambda][#1]}
+\newcommand{\OIIall}{\forbiddenEL[O][ii][\textlambda][\textlambda][3726,][3729]}
+
+\newcommand{\NeIII}{\forbiddenEL[Ne][iii]}
+\newcommandx{\NeIIIL}[1][1=3869]{\forbiddenEL[Ne][iii][\textlambda][#1]}
+\newcommand{\NeIIIall}{\forbiddenEL[Ne][iii][\textlambda][\textlambda][3869,][3967]}
+
+\newcommand{\OIII}{\forbiddenEL[O][iii]}
+\newcommandx{\OIIIL}[1][1=5007]{\forbiddenEL[O][iii][\textlambda][#1]}
+\newcommand{\OIIIall}{\forbiddenEL[O][iii][\textlambda][\textlambda][4959,][5007]}
+
+\newcommandx{\NIL}[1][1=5200]{\forbiddenEL[N][i][\textlambda][#1]}
+\newcommand{\NIall}{\forbiddenEL[N][i][\textlambda][\textlambda][5198,][5200]}
+
+\newcommand{\OI}{\forbiddenEL[O][i]}
+\newcommandx{\OIL}[1][1=6300]{\forbiddenEL[O][i][\textlambda][#1]}
+\newcommand{\OIall}{\forbiddenEL[O][i][\textlambda][\textlambda][6300,][6364]}
+
+\newcommand{\HeI}{\permittedEL[He][i]}
+\newcommandx{\HeIL}[1][1=5875]{\permittedEL[He][i][\textlambda][#1]}
+
+\newcommand{\OIres}{\permittedEL[O][i]}
+\newcommandx{\OIresL}[1][1=8446]{\permittedEL[O][i][\textlambda][#1]}
+
+\newcommand{\NII}{\forbiddenEL[N][ii]}
+\newcommandx{\NIIL}[1][1=6583]{\forbiddenEL[N][ii][\textlambda][#1]}
+\newcommand{\NIIall}{\forbiddenEL[N][ii][\textlambda][\textlambda][6548,][6583]}
+
+\newcommand{\SII}{\forbiddenEL[S][ii]}
+\newcommandx{\SIIL}[1][1=6716]{\forbiddenEL[S][ii][\textlambda][#1]}
+\newcommand{\SIIall}{\forbiddenEL[S][ii][\textlambda][\textlambda][6716,][6731]}
+
+\newcommandx{\OIIAuL}[1][1=7325]{\forbiddenEL[O][ii][\textlambda][#1]}
+\newcommand{\OIIAuall}{\forbiddenEL[O][ii][\textlambda][\textlambda][7319--][7331]}
+
+\newcommandx{\CIIFIRL}{\forbiddenEL[C][ii][\textlambda][158\,\mum]}
